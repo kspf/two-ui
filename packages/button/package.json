@@ -11,5 +11,6 @@
     "build:pro": "cross-env NODE_ENV=production INPUT_FILE=./src/index.ts rollup -c ../../rollup.config.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "gitHead": "885aaac10cfe2eeaa35d42515fe1869d64e95748"
 }
