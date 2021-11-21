@@ -5,6 +5,7 @@
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "umd": "dist/umd/index.js",
+  "typings": "@types/index.d.ts",
   "scripts": {
     "types": "tsc -d --emitDeclarationOnly",
     "build:dev": "cross-env NODE_ENV=development INPUT_FILE=./src/index.ts rollup -c ../../rollup.config.js -w",
