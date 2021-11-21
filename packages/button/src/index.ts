@@ -7,6 +7,8 @@ export default {
   },
   log () {
     console.log(data)
+  },
+  g () {
+    console.log("9999")
   }
-
 }
