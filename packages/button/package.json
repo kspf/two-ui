@@ -8,8 +8,9 @@
   "typings": "@types/index.d.ts",
   "scripts": {
     "types": "tsc -d --emitDeclarationOnly",
-    "build:dev": "cross-env NODE_ENV=development INPUT_FILE=./src/index.ts rollup -c ../../rollup.config.js -w",
-    "build:pro": "cross-env NODE_ENV=production INPUT_FILE=./src/index.ts rollup -c ../../rollup.config.js"
+    "build:pro": "cross-env NODE_ENV=production INPUT_FILE=./src/index.ts rollup -c ../../rollup.config.js",
+    "demo": "two-cli demo",
+    "serve": "two-cli dev"
   },
   "author": "",
   "license": "ISC",
