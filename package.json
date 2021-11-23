@@ -20,24 +20,24 @@
     "inquirer": "^7.3.3",
     "jest": "^27.3.1",
     "lerna": "^4.0.0",
+    "node-sass": "^6.0.1",
     "plop": "^2.7.6",
     "rollup": "^2.60.0",
     "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-postcss": "^4.0.2",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.2",
     "vue": "^3.2.22"
   },
   "scripts": {
     "types": "lerna run types",
-    "build": "npm run types && lerna run build:pro",
+    "build": "lerna run build:pro",
     "link": "lerna link",
     "serve": "node ./scripts/dev-server.js",
     "demo": "lerna run demo",
-    "lint": "eslint ./packages --ext ts --ext tsx",
-    "fix": "eslint ./packages --ext ts --ext tsx --fix",
     "bootstrap": "lerna clean -y && lerna bootstrap",
     "render:component": "plop",
-    "publish": "npm run build && lerna publish from-package --y --no-verify-access ",
+    "publish": "npm run types && npm run build && lerna publish from-package --y --no-verify-access ",
     "test": "jest"
   }
 }

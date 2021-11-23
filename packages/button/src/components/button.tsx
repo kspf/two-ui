@@ -1,7 +1,7 @@
 import { ref } from 'vue'
 import { createNamespace } from '@two-ui/base'
 
-// import './style.scss'
+import './../style/index.scss'
 
 const [ createComponent, bem ] = createNamespace('button')
 

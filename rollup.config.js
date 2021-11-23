@@ -7,6 +7,7 @@ import resolve from '@rollup/plugin-node-resolve'
 import json from '@rollup/plugin-json'
 // rollup babel插件
 import { babel } from '@rollup/plugin-babel'
+import postCss from 'rollup-plugin-postcss'
 
 // 获取入口文件
 const input = process.env.INPUT_FILE
@@ -17,10 +18,10 @@ const root = process.cwd()
 const pkg = require(path.resolve(root, 'package.json'))
 
 // 需要打包的文件的后缀
-const extensions = ['.ts', '.tsx']
+const extensions = ['.ts', '.tsx', '.scss']
 
 // 排除的文件
-const external = ['vue']
+const external = ['vue', /@two-ui/]
 
 // 出口文件
 const output = [
@@ -36,6 +37,17 @@ const Config = {
   output,
   external,
   plugins: [
+    postCss({
+      // 是否提取到.css文件中
+      extract: true,
+      // 处理的扩展名
+      extensions: [
+        '.css',
+        '.scss'
+      ],
+      // 最小化css 就是压缩css
+      // minimize: !!isPro()
+    }),
     resolve({
       preferBuiltins: false,
       mainFields: ['module', 'main'],
