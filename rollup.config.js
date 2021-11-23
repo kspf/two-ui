@@ -49,7 +49,8 @@ const Config = {
         'packages/**/node_modules/*.d.ts',
         'node_modules/*.d.ts',
         '**/dist/**/*',
-        '**/demo/*'
+        '**/demo/*',
+        '**/__tests__/**/*'
       ]
     }),
     commonjs(),

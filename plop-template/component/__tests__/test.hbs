@@ -1,0 +1,10 @@
+import {{ name }} from '../src/index'
+import { mount } from '@vue/test-utils'
+
+describe('two-{{ name }}', () => {
+  // 测试默认状态
+  test('badge-default', () => {
+    const wrapper = mount({{ name }})
+    expect(wrapper.html()).toContain('')
+  })
+})

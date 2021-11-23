@@ -1,0 +1,16 @@
+import { createNamespace } from '@two-ui/base'
+
+const [ createComponent, bem ] = createNamespace('{{name}}')
+
+export default createComponent({
+
+  setup(props, { slots, attrs }) {
+    return () => {
+      return (
+        <div>
+          {{name}}
+        </div>
+      );
+    };
+  },
+});

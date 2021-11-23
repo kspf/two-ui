@@ -1,0 +1,39 @@
+@import './var.scss';
+// 还原样式
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  font-family: $base-font-family;
+  background-color: $grey-level-6;
+}
+
+a {
+  text-decoration: none;
+}
+
+input,
+button,
+textarea {
+  color: inherit;
+  font: inherit;
+}
+
+a,
+input,
+button,
+textarea,
+[class*='two-'] {
+  &:focus {
+    outline: none;
+  }
+}
+
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

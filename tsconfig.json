@@ -104,13 +104,13 @@
   },
   "exclude": [
     "*.config.js",
-    "**/dist/**/*",
-    "**/@types/**",
-    "packages/**/node_modules/*.d.ts", 
-    "node_modules/*.d.ts", 
-    "**/dist/**/*", "**/demo/*", 
+    "@types",
+    "**/dist/**/*", 
+    "**/demo/*", 
     "node_modules/**/*", 
     "node_modules",
     "*.d.ts",
+    "scripts/*.js",
+    "./plopfile.js"
   ]
 }
