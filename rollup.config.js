@@ -7,6 +7,9 @@ import resolve from '@rollup/plugin-node-resolve'
 import json from '@rollup/plugin-json'
 // rollup babel插件
 import { babel } from '@rollup/plugin-babel'
+// 加别名
+import alias from '@rollup/plugin-alias';
+// 吃力css文件
 import postCss from 'rollup-plugin-postcss'
 
 // 获取入口文件
@@ -37,6 +40,11 @@ const Config = {
   output,
   external,
   plugins: [
+    resolve({
+      preferBuiltins: false,
+      mainFields: ['module', 'main'],
+      extensions
+    }),
     postCss({
       // 是否提取到.css文件中
       extract: true,
@@ -45,13 +53,11 @@ const Config = {
         '.css',
         '.scss'
       ],
+      onImport () {
+        console.log(arguments)
+      }
       // 最小化css 就是压缩css
       // minimize: !!isPro()
-    }),
-    resolve({
-      preferBuiltins: false,
-      mainFields: ['module', 'main'],
-      extensions
     }),
     babel({
       babelHelpers: 'bundled',

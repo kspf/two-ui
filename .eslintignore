@@ -1,0 +1,12 @@
+node_modules
+dist
+packages/**/dist/
+packages/**/*.d.ts
+*.d.ts
+/**/*.d.ts
+es
+lib
+dist
+node_modules
+jest.config.ts
+HTMLElementTagNameMap

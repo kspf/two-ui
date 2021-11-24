@@ -1,19 +1,18 @@
 import { createNamespace } from '@two-ui/base'
 
-const [createComponent, bem] = createNamespace('{{name}}')
+const [createComponent, bem] = createNamespace('switch')
 
-const {{name}}Props = {
+const switchProps = {
 
 }
 
 export default createComponent({
   props: {
-    ...{{name}}Props
+    ...switchProps
   },
   setup (props, { slots, attrs }) {
     return () => {
       return <div>
-        {{name}}
       </div>
     }
   }

@@ -19,7 +19,7 @@ module.exports = plop => {
       // 组件文件
       {
         type: 'add',
-        path: 'packages/{{name}}/src/components/{{name}}.ts',
+        path: 'packages/{{name}}/src/components/{{name}}.tsx',
         templateFile: 'plop-template/component/src/components/component.hbs'
       },
       // demo 文件
@@ -58,7 +58,7 @@ module.exports = plop => {
         path: 'packages/{{name}}/LICENSE',
         templateFile: 'plop-template/component/LICENSE'
       },
-      // package.json 
+      // package.json
       {
         type: 'add',
         path: 'packages/{{name}}/package.json',

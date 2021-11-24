@@ -1,5 +1,10 @@
-@import '~@two-ui/base/style/var.scss';
+@import '@two-ui/base/style/var.scss';
 
-.two-icon {
-  width: 133px;
+.two-button {
+  display: inline-block;
+  padding: 0 10px;
+  width: 100%;
+  &__block {
+    display: block;
+  }
 }
