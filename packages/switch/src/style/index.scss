@@ -1,5 +1,54 @@
-@import '~@two-ui/base/style/var.scss';
+@import '@two-ui/base/style/var.scss';
+
+$two-switch-width: 2em; 
+$two-switch-height: 1em;
+$two-switch-border: 1px solid #c5c1c1;
+$two-switch-border-radius: 1em;
+$two-switch-background-color: white;
+$two-switch-active-background-color: red;
+$two-switch-cursor: auto;
+$two-switch-disabled-cursor: not-allowed;
+$two-switch-disabled-opacity: 0.5;
+$two-switch-size: 30px;
+
+$two-switch-spot-width: 1em; 
+$two-switch-spot-height: 1em;
+$two-switch-spot-border: 1px solid #c5c1c1;
+$two-switch-spot-border-radius: 1em;
+$two-switch-spot-background-color: white;
+$two-switch-spot-acive-background-color: white;
 
 .two-switch {
-  
+  display: inline-block;
+  width: $two-switch-width;
+  height: $two-switch-height;
+  border-radius: $two-switch-border-radius;
+  border: $two-switch-border;
+  position: relative;
+  background-color: $two-switch-background-color;
+  cursor: $two-switch-cursor;
+  font-size: $two-switch-size;
+
+  &__spot{
+    position: absolute;
+    width: $two-switch-spot-width;
+    height: $two-switch-spot-height;
+    border-radius: $two-switch-spot-border-radius;
+    border: $two-switch-spot-border;
+    transition: transform .2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    background-color: $two-switch-spot-background-color;
+  }
+
+  &--on {
+    background-color: $two-switch-active-background-color;
+    .two-switch__spot{
+      transform: translate(calc(2em - 1em));
+      background-color: $two-switch-spot-acive-background-color;
+    }
+  }
+
+  &--disabled {
+    cursor: $two-switch-disabled-cursor;
+    opacity: $two-switch-disabled-opacity;
+  }
 }

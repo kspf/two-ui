@@ -1,10 +1,10 @@
-import {{ name }} from '../src/index'
+import two{{ properCase name }} from './../src/index'
 import { mount } from '@vue/test-utils'
 
 describe('two-{{ name }}', () => {
   // 测试默认状态
-  test('badge-default', () => {
-    const wrapper = mount({{ name }})
+  test('{{ name }}-default', () => {
+    const wrapper = mount(two{{ properCase name }})
     expect(wrapper.html()).toContain('')
   })
 })

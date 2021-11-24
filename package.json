@@ -47,6 +47,6 @@
     "bootstrap": "lerna clean -y && lerna bootstrap",
     "render:component": "plop",
     "publish": "npm run types && npm run build && lerna publish from-package --y --no-verify-access ",
-    "test": "jest"
+    "test": "lerna run test"
   }
 }

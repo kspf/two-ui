@@ -15,5 +15,10 @@
         "@typescript-eslint"
     ],
     "rules": {
+    },
+    "globals": {
+        "describe": true,
+        "test": true,
+        "expect": true
     }
 }

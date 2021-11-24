@@ -30,7 +30,8 @@
     "build:pro": "cross-env NODE_ENV=production INPUT_FILE=./src/index.ts rollup -c ../../rollup.config.js",
     "build": "npm run types && npm run build",
     "demo": "two-cli demo",
-    "serve": "two-cli dev"
+    "serve": "two-cli dev",
+    "test": "jest"
   },
   "gitHead": "885aaac10cfe2eeaa35d42515fe1869d64e95748"
 }
