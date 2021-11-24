@@ -1,4 +1,4 @@
-# two-ui badge component
+# two-ui {{ name }} component
 
 ## 安装
 
@@ -9,8 +9,14 @@ npm install @two-ui/{{ name }}
 ## 使用
 
 ```javascript
-import Vue from 'vue'
-import {{ name }} from '@two-ui/{{ name }}'
+import two{{properCase name }} from '@two-ui/{{ name }}';
 
-Vue.use({{ name }})
+export default {
+  components: {
+    [two{{properCase name}}.name]: two{{properCase name }},
+  },
+};
+
 ```
+
+## 介绍
