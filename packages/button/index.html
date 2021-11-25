@@ -10,9 +10,22 @@
     <div id="app"></div>
     <script type="module">
       import { createApp } from 'vue'
+      import {createRouter, createWebHistory} from 'vue-router'
       import  App from './src/demo/index.vue'
-      const app = createApp(App)
-      app.mount("#app")
+
+      const route = createRouter({
+        history: createWebHistory(),
+        //路由模式
+        routes: [
+          {
+            name: 'a',
+            path: '/a',
+            component: () => import('./src/demo/index.vue')
+          },
+        ]
+      })
+
+      const app = createApp(App).use(route).mount("#app")
     </script>
   </body>
 </html>

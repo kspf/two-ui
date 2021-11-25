@@ -1,10 +1,108 @@
 @import '@two-ui/base/style/var.scss';
 
+$two-button-padding: 0 20px;
+$two-button-height: 50px;
+$two-button-font-size: 16px;
+$two-button-active-opacity: 0.1;
+$two-button-before: black;
+$two-button-bordre-radius: 2px;
+$two-button-before-border-color: black;
+$two-button-disabled-opacity: 0.2;
+
 .two-button {
+  cursor: pointer;
   display: inline-block;
-  padding: 0 10px;
-  width: 100%;
-  &__block {
+  padding: $two-button-padding;
+  position: relative;
+  border-radius: $two-button-bordre-radius;
+  height: $two-button-height;
+  box-sizing: border-box;
+  color: white;
+  border: 0;
+  margin: 0;
+  outline: none;
+  font-size: $two-button-font-size;
+  background-color: transparent;
+  text-align: center;
+  appearance: none;
+  vertical-align: middle;
+  align-items: flex-end;
+
+  &::before{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: $two-button-before;
+    border: inherit;
+    border-color: $two-button-before-border-color;
+    border-radius: inherit;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    content: " ";
+  }
+
+  &:disabled, &--disabled {
+    opacity: $two-button-disabled-opacity;
+  }
+
+  &:active::before {
+    opacity: $two-button-active-opacity;
+  }
+
+  &--block {
     display: block;
+    width: 100%;
+  }
+
+  // 按钮内容容器
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  // 大号按钮
+  &--large {
+    width: 100%;
+  }
+  // 普通按钮
+  &--normal {
+    // height: 30px;
+  }
+  // 小型按钮
+  &--small {
+    height: 40px;
+    padding: 0 15px;
+  }
+  // 迷你按钮
+  &--mini {
+    height: 30px;
+    padding: 0 10px;
+  }
+  
+  // 默认按钮
+  &--default {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+  }
+  // 主要按钮
+  &--primary {
+    background-color: blue;
+  }
+  // 成功按钮
+  &--success {
+    background-color: green;
+  }
+  // 警告按钮
+  &--warning {
+    background-color: rgb(216, 192, 59);
+  }
+  // 危险按钮
+  &--danger {
+    background-color: #ff976a;
   }
 }

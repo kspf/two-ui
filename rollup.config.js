@@ -8,7 +8,7 @@ import json from '@rollup/plugin-json'
 // rollup babel插件
 import { babel } from '@rollup/plugin-babel'
 // 加别名
-import alias from '@rollup/plugin-alias';
+// import alias from '@rollup/plugin-alias';
 // 吃力css文件
 import postCss from 'rollup-plugin-postcss'
 
@@ -24,7 +24,7 @@ const pkg = require(path.resolve(root, 'package.json'))
 const extensions = ['.ts', '.tsx', '.scss']
 
 // 排除的文件
-const external = ['vue', /@two-ui/]
+const external = ['vue', 'vue-router', /@two-ui/]
 
 // 出口文件
 const output = [
@@ -72,8 +72,7 @@ const Config = {
       ]
     }),
     commonjs(),
-    json(),
-    
+    json()
   ]
 }
 

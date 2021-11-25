@@ -22,9 +22,6 @@
     "url": "https://github.com/kspf/two-ui.git",
     "directory": "packages/base"
   },
-  "dependencies": {
-    "@two-ui/base": "^1.0.0"
-  },
   "scripts": {
     "types": "tsc -d --emitDeclarationOnly",
     "build:pro": "cross-env NODE_ENV=production INPUT_FILE=./src/index.ts rollup -c ../../rollup.config.js",
