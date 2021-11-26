@@ -1,19 +1,16 @@
 import {
-  ExtractPropTypes,
   getCurrentInstance,
   ComponentPublicInstance
 } from 'vue'
 import type { RouteLocation } from 'vue-router'
 
-export const routeProps = {
-  to: [String, Object],
-  url: String,
-  replace: Boolean
+interface routeProps {
+  to?: string | object,
+  url?: string,
+  replace?: boolean
 }
 
-export type RouteProps = ExtractPropTypes<typeof routeProps>;
-
-export function to (vm: ComponentPublicInstance<RouteLocation>, route: ComponentPublicInstance<RouteProps>) {
+export function to (vm: ComponentPublicInstance<RouteLocation>, route: routeProps) {
   const router: any = vm.$router
   const { to, url, replace } = route
   if (to && router) {
@@ -25,7 +22,7 @@ export function to (vm: ComponentPublicInstance<RouteLocation>, route: Component
 
 export function useRouter () {
   const vm = getCurrentInstance()!.proxy as ComponentPublicInstance<RouteLocation>
-  return (route: ComponentPublicInstance<RouteProps>) => {
+  return (route: routeProps) => {
     to(vm, route)
   }
 }

@@ -94,7 +94,9 @@ const buttonProps = {
     default: 'circular'
   },
   // 加载图标大小，默认单位为 px
-  loadingSize: {},
+  loadingSize: {
+    type: [String, Number]
+  },
   // 点击后跳转的链接地址
   url: {
     type: String
@@ -105,6 +107,11 @@ const buttonProps = {
   },
   // 是否在跳转时替换当前页面历史
   replace: {
+    type: Boolean,
+    default: false
+  },
+  // 朴素按钮 朴素按钮边框颜色和字体颜色
+  plain: {
     type: Boolean,
     default: false
   }
@@ -119,9 +126,15 @@ export default createComponent({
 
   setup (props, { emit, slots }) {
     const route = useRouter()
+
+    // const renderLoading = () => {
+
+    // }
+
     const renderIcon = () => {
-      if (!props.loading) {
-        if (props.icon) {
+      const { loading, icon } = props
+      if (!loading) {
+        if (icon) {
           return <img style="width: 1em;height: 1em;" src={props.icon} alt="" />
         }
         return
@@ -130,14 +143,14 @@ export default createComponent({
         <div class="two-loading">{ props.loadingType }</div>
       </div>
     }
+
     const renderContent = () => {
-      return <div class={bem('content')}>
-        { renderIcon()}
-        <span class={bem('text')}>
-          {slots.default && !props.loading && slots.default()}
-          { props.loading && props.loadingText}
-        </span>
-      </div>
+      const { loading, loadingText } = props
+      const text = loadingText
+      if (!loading) {
+        return <span class={bem('text')}>{ slots.default && slots.default() }</span>
+      }
+      return <span class={bem('text')}>{ text }</span>
     }
 
     const handleClick = () => {
@@ -158,10 +171,18 @@ export default createComponent({
 
     const calcStyle = () => {
       const cssStyle: CSSProperties = {}
-      const { color, textColor } = props
+      const { color, textColor, plain } = props
       if (textColor) {
         cssStyle.color = textColor
       }
+
+      if (plain) {
+        cssStyle.color = color
+        cssStyle.borderColor = color
+        cssStyle.backgroundColor = 'transparent'
+        return cssStyle
+      }
+
       if (color) {
         if (color.indexOf('gradient') !== -1) {
           cssStyle.border = 0
@@ -171,24 +192,32 @@ export default createComponent({
         cssStyle.background = color
         return cssStyle
       }
+      return cssStyle
     }
 
     return () => {
       // 使用传入的html标记
-      const { tag, nativeType, type, size, disabled, block } = props
+      // eslint-disable-next-line no-unused-vars
+      const { tag, nativeType, type, size, disabled, block, iconPosition, hairline, plain } = props
       return (<tag
         type={nativeType}
         class={bem({
           [size]: size,
           [type]: type,
           block: block,
+          plain: plain,
+          hairline,
           disabled
         })}
         disabled={disabled}
         onClick={handleClick}
         style={calcStyle()}
       >
-      {renderContent()}
+        <div class={bem('content')}>
+          {iconPosition === 'left' && renderIcon()}
+          {renderContent()}
+          {iconPosition === 'right' && renderIcon()}
+        </div>
     </tag>)
     }
   }

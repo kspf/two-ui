@@ -1,13 +1,27 @@
-@import '@two-ui/base/style/var.scss';
+@import '@two-ui/base/style/main.scss';
 
 $two-button-padding: 0 20px;
 $two-button-height: 50px;
 $two-button-font-size: 16px;
+$two-button-border-width: 1px;
 $two-button-active-opacity: 0.1;
-$two-button-before: black;
+$two-button-before-background: black;
 $two-button-bordre-radius: 2px;
 $two-button-before-border-color: black;
 $two-button-disabled-opacity: 0.2;
+$two-button-large-width: 100%;
+$two-button-small-height: 40px;
+$two-button-small-padding: 0 15px;
+$two-button-mini-height: 30px;
+$two-button-mini-padding: 0 10px;
+$two-button-primary-color: blue;
+$two-button-success-color: green;
+$two-button-warning-color: rgb(216, 192, 59);
+$two-button-danger-color: #ff976a;
+$two-button-black-color: black;
+$two-button-white-color: white;
+
+
 
 .two-button {
   cursor: pointer;
@@ -17,7 +31,7 @@ $two-button-disabled-opacity: 0.2;
   border-radius: $two-button-bordre-radius;
   height: $two-button-height;
   box-sizing: border-box;
-  color: white;
+  color: $two-button-white-color;
   border: 0;
   margin: 0;
   outline: none;
@@ -27,6 +41,7 @@ $two-button-disabled-opacity: 0.2;
   appearance: none;
   vertical-align: middle;
   align-items: flex-end;
+  border-style: solid;
 
   &::before{
     position: absolute;
@@ -34,7 +49,7 @@ $two-button-disabled-opacity: 0.2;
     left: 50%;
     width: 100%;
     height: 100%;
-    background: $two-button-before;
+    background: $two-button-before-background;
     border: inherit;
     border-color: $two-button-before-border-color;
     border-radius: inherit;
@@ -66,43 +81,83 @@ $two-button-disabled-opacity: 0.2;
 
   // 大号按钮
   &--large {
-    width: 100%;
+    width: $two-button-large-width;
   }
   // 普通按钮
-  &--normal {
-    // height: 30px;
-  }
+  // &--normal {
+  //   height: 30px;
+  // }
   // 小型按钮
   &--small {
-    height: 40px;
-    padding: 0 15px;
+    height: $two-button-small-height;
+    padding: $two-button-small-padding;
   }
   // 迷你按钮
   &--mini {
-    height: 30px;
-    padding: 0 10px;
+    height: $two-button-mini-height;
+    padding: $two-button-mini-padding;
   }
-  
+
+  // 朴素按钮拥有1px的边框
+  &--plain {
+    border-width: $two-button-border-width;
+
+    &.two-button--default {
+      color: black;
+    }
+    &.two-button--primary {
+      color:$two-button-primary-color;
+    }
+    &.two-button--success {
+      color:$two-button-success-color;
+
+    }
+    &.two-button--warning {
+      color: $two-button-warning-color;
+    }
+    &.two-button--danger {
+      color: $two-button-danger-color;
+    }
+  }
+
   // 默认按钮
   &--default {
-    background-color: white;
-    color: black;
-    border: 1px solid black;
+    background-color: transparent;
+    color: $two-button-black-color;
+    border-color: $two-button-black-color;
+    border-width: $two-button-border-width;
   }
   // 主要按钮
   &--primary {
-    background-color: blue;
+    background-color: $two-button-primary-color;
+    border-color: $two-button-primary-color;
+    color: $two-button-white-color;
   }
   // 成功按钮
   &--success {
-    background-color: green;
+    background-color: $two-button-success-color;
+    border-color: $two-button-success-color;
+    color: $two-button-white-color;
   }
   // 警告按钮
   &--warning {
-    background-color: rgb(216, 192, 59);
+    background-color: $two-button-warning-color;
+    border-color: $two-button-warning-color;
+    color: $two-button-white-color;
   }
   // 危险按钮
   &--danger {
-    background-color: #ff976a;
+    background-color: $two-button-danger-color;
+    border-color: $two-button-danger-color;
+    color: $two-button-white-color;
+  }
+
+  // 极细边框先去掉主
+  &--hairline {
+    border-width: 0;
+
+    &::after {
+      border-width: $two-button-border-width;
+    }
   }
 }
