@@ -1,6 +1,6 @@
 const camelizeRE = /-(\w)/g
-const company = 'cm,mm,in,px,pt,pc,em,ex,ch,rem,vw,vh,vmin,vmax,%'
-
+const company = ['cm', 'mm', 'in', 'px', 'pt', 'pc', 'em', 'ex', 'ch', 'rem', 'vw', 'vh', 'vmin', 'vmax', '%']
+const testPath = /\//
 /**
  *
  * @description 把-换成驼峰命名
@@ -28,10 +28,20 @@ export function toString () {
  * @param {string} str
  * @return {*}  {string}
  */
-export function toCssCompany (str: any, comp: string = 'px'): string {
+export function toCssCompany (str: string, comp: string = 'px'): string {
   str = str + ''
-  if (company?.indexOf(str) > -1) {
+  if (company.some(item => (str.indexOf(item) !== -1))) {
     return str
   }
   return str + comp
+}
+
+/**
+ * @description 把传入的内容转化为有css单位的字符串
+ * @export isPath
+ * @param {string} str
+ * @return {*}  {boolean}
+ */
+export function isPath (str: any): boolean {
+  return testPath.test(str)
 }

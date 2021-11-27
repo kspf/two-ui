@@ -9,4 +9,3 @@ lib
 dist
 node_modules
 jest.config.ts
-HTMLElementTagNameMap

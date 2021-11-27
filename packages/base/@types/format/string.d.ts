@@ -19,5 +19,12 @@ export declare function toString(): void;
  * @param {string} str
  * @return {*}  {string}
  */
-export declare function toCssCompany(str: any, comp?: string): string;
+export declare function toCssCompany(str: string, comp?: string): string;
+/**
+ * @description 把传入的内容转化为有css单位的字符串
+ * @export isPath
+ * @param {string} str
+ * @return {*}  {boolean}
+ */
+export declare function isPath(str: any): boolean;
 //# sourceMappingURL=string.d.ts.map

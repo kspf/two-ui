@@ -1,0 +1,10 @@
+@import '~@two-ui/base/style/var.scss';
+@import url('./../iconfonts/iconfont.css');
+
+.two-icon {
+  
+  &__img {
+    width: 1em;
+    height: 1em;
+  }
+}

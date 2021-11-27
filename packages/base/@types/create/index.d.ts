@@ -6,4 +6,5 @@
  * @return {*} [createComponent(name), createBEM(name)]
  */
 export declare function createNamespace(name: string): readonly [typeof import("vue").defineComponent, (el?: import("./bem").Mods | undefined, mods?: import("./bem").Mods | undefined) => import("./bem").Mods];
+export * from './bem';
 //# sourceMappingURL=index.d.ts.map
