@@ -28,12 +28,12 @@ export function toString () {
  * @param {string} str
  * @return {*}  {string}
  */
-export function toCssCompany (str: string, comp: string = 'px'): string {
-  str = str + ''
-  if (company.some(item => (str.indexOf(item) !== -1))) {
-    return str
+export function toCssCompany (str: string | number, comp: string = 'px'): string {
+  const pre = str + ''
+  if (company.some(item => (pre.indexOf(item) !== -1))) {
+    return pre
   }
-  return str + comp
+  return pre + comp
 }
 
 /**

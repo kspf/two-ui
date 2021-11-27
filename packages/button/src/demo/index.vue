@@ -1,5 +1,5 @@
 <script>
-  import TwoButton from '../index'
+  import { TwoButton } from '../index'
 
   export default {
     data () {

@@ -28,7 +28,7 @@ const iconProps = {
   }
 }
 
-export default createComponent({
+export const TwoIcon = createComponent({
   props: {
     ...iconProps
   },

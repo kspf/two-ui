@@ -1,6 +1,6 @@
 <script setup>
   import { ref } from 'vue'
-  import TwoIcon from '../index'
+  import { TwoIcon } from '../index'
   import Icons from './../iconfonts/iconfont.json'
 </script>
 

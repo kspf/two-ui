@@ -1,0 +1,30 @@
+@import '~@two-ui/base/style/var.scss';
+
+.two-radio {
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+
+
+  .two-radio__label {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: white;
+    // vertical-align: middle;
+    border: 1px solid #dbdbdb;
+  }
+  &__input{
+    position: absolute;
+    opacity: 0;
+
+    &:checked + label {
+      background-color: blue;
+    }
+  }
+
+  span {
+    // vertical-align: middle;
+  }
+}

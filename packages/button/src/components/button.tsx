@@ -117,7 +117,7 @@ const buttonProps = {
   }
 }
 
-export default createComponent({
+export const TwoButton = createComponent({
   props: {
     ...buttonProps
   },

@@ -19,7 +19,7 @@ export declare function toString(): void;
  * @param {string} str
  * @return {*}  {string}
  */
-export declare function toCssCompany(str: string, comp?: string): string;
+export declare function toCssCompany(str: string | number, comp?: string): string;
 /**
  * @description 把传入的内容转化为有css单位的字符串
  * @export isPath

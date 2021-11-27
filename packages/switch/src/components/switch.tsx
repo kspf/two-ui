@@ -42,13 +42,13 @@ const switchProps = {
   }
 }
 
-export default createComponent({
+export const TwoSwitch = createComponent({
   props: {
     ...switchProps
   },
 
   emits: ['change', 'update:modelValue'],
-  setup (props, { slots, attrs, emit }) {
+  setup (props, { emit }) {
     // 选中状态
     const isChecked = () => props.modelValue === props.activeValue
 
@@ -57,10 +57,11 @@ export default createComponent({
      * @description Switch 组件点击事件
      */
     const handleSwitchClick = () => {
-      if (props.disabled || props.loading) {
+      const { disabled, loading, inactiveValue, activeValue } = props
+      if (disabled || loading) {
         return
       }
-      const newValue = isChecked() ? props.inactiveValue : props.activeValue
+      const newValue = isChecked() ? inactiveValue : activeValue
       emit('update:modelValue', newValue)
       emit('change', newValue)
     }
@@ -73,13 +74,14 @@ export default createComponent({
     }
 
     const calcStyle = (checked: boolean) => {
+      const { size, activeColor } = props
       let style = ''
-      if (props.size) {
-        style += `font-size: ${toCssCompany(props.size)};`
+      if (size) {
+        style += `font-size: ${toCssCompany(size)};`
       }
 
-      if (checked && props.activeColor) {
-        style += `background-color: ${props.activeColor};`
+      if (checked && activeColor) {
+        style += `background-color: ${activeColor};`
       }
       return style
     }

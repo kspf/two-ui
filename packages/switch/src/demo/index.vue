@@ -1,5 +1,5 @@
 <script>
-  import TwoSwitch from './../index'
+  import { TwoSwitch } from './../index'
   export default {
     data () {
       return {
