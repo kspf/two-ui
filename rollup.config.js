@@ -21,7 +21,7 @@ const root = process.cwd()
 const pkg = require(path.resolve(root, 'package.json'))
 
 // 需要打包的文件的后缀
-const extensions = ['.ts', '.tsx', '.scss']
+const extensions = ['.ts', '.tsx', '.scss', '.css']
 
 // 排除的文件
 const external = ['vue', 'vue-router', /@two-ui/]
@@ -51,13 +51,17 @@ const Config = {
       // 处理的扩展名
       extensions: [
         '.css',
-        '.scss'
+        '.scss',
+        '.svg',
+        '.ttf',
+        '.woff',
+        '.woff2'
       ],
-      onImport () {
-        console.log(arguments)
-      }
       // 最小化css 就是压缩css
-      // minimize: !!isPro()
+      minimize: false,
+      namedExports (name) {
+        return name
+      }
     }),
     babel({
       babelHelpers: 'bundled',

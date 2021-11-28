@@ -1,0 +1,32 @@
+@import '~@two-ui/base/style/var.scss';
+
+.two-cell {
+  position: relative;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 14px 15px;
+  background-color: white;
+  cursor: pointer;
+
+
+  &:active {
+    background-color: rgba($color: #000000, $alpha: 0.1);
+  }
+  &__right-icon {
+    color: gray;
+    vertical-align: middle;
+    margin-left: 10px;
+  }
+  &__title , &__value{
+    flex: 1;
+  }
+  &__title {
+    color: black;
+  }
+  &__value{
+    text-align: right;
+    color: gray;
+  }
+}

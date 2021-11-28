@@ -1,0 +1,33 @@
+@import '~@two-ui/base/style/var.scss';
+@import '~@two-ui/base/style/normalize.scss';
+
+.two-cell-group {
+  
+  &--inset {
+    margin: 0 16px;
+  }
+  .two-cell {
+    position: relative;
+    &::after{
+      content: "";
+      position: absolute;
+      border-bottom: 1px solid rgb(219, 211, 211);
+      bottom: 0;
+      left: 16px;
+      right: 16px;
+      transform: scaleY(0.5);
+    }
+  }
+  &__title {
+    padding: 25px 15px 14px;
+  }
+  .two-cell:first-child {
+    border-radius: 10px 10px 0 0;
+  }
+  .two-cell:last-child {
+    border-radius: 0 0 10px 10px;
+    &::after{
+      content: none;
+    }
+  }
+}

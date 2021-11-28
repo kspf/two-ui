@@ -72,9 +72,7 @@ export const TwoIcon = createComponent({
     return () => {
       // eslint-disable-next-line no-unused-vars
       const { tag } = props
-      return <tag class={calcClass()} style={calcStyle()} onClick={handleClick}>
-        {renderImageIcon()}
-      </tag>
+      return <tag class={calcClass()} style={calcStyle()} onClick={handleClick}>{renderImageIcon()}</tag>
     }
   }
 })
