@@ -11,13 +11,9 @@
 <template>
  
   <TwoRadioGroup v-model="radio">
-    <div>
-      <div>
-        <two-radio value="1" disabled>单选框1</two-radio>
-        <two-radio value="2">单选框2</two-radio>
-        <two-radio value="3">单选框3</two-radio>
-      </div>
-    </div>
+    <two-radio value="1" disabled>单选框1</two-radio>
+    <two-radio value="2">单选框2</two-radio>
+    <two-radio value="3">单选框3</two-radio>
   </TwoRadioGroup>
 
   <two-radio value="4" v-model="radio2">单选框4</two-radio>

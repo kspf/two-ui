@@ -1,6 +1,6 @@
 import { createNamespace } from '@two-ui/base'
 
-const [createComponent, bem] = createNamespace('radio-group')
+const [createComponent] = createNamespace('radio-group')
 
 const radioProps = {
   modelValue: {
