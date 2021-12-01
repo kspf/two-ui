@@ -1,0 +1,37 @@
+{
+  "name": "@two-ui/layout",
+  "version": "1.0.0",
+  "description": "layout component",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "umd": "dist/umd/index.js",
+  "typings": "@types/index.d.ts",
+  "author": "开水泡饭 <80527573@qq.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/kspf/two-ui",
+  "bugs": {
+    "url": "https://github.com/kspf/two-ui/issues"
+  },
+  "keywords": [
+    "@two-ui",
+    "@two-ui/layout",
+    "layout"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kspf/two-ui.git",
+    "directory": "packages/layout"
+  },
+  "dependencies": {
+    "@two-ui/base": "^1.0.0"
+  },
+  "scripts": {
+    "types": "tsc -d --emitDeclarationOnly",
+    "build:pro": "cross-env NODE_ENV=production INPUT_FILE=./src/index.ts rollup -c ../../rollup.config.js",
+    "build": "npm run types && npm run build",
+    "demo": "two-cli demo",
+    "serve": "two-cli dev",
+    "test": "jest"
+  },
+  "gitHead": "885aaac10cfe2eeaa35d42515fe1869d64e95748"
+}

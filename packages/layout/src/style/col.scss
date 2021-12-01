@@ -1,0 +1,22 @@
+@import '~@two-ui/base/style/var.scss';
+
+$layout: 24;
+
+.two-col {
+  display: block;
+  box-sizing: border-box;
+  min-height: 1px;
+ 
+  @for $i from 1 through $layout{
+    &--#{$i} {
+      flex: 0 0 100% / 24 * $i;
+      max-width: 100% / 24 * $i;
+    }
+  }
+
+  @for $i from 1 through $layout{
+    &--offset--#{$i} {
+      margin-left: 100% / 24 * $i; 
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@import '~@two-ui/base/style/var.scss';
+
+.two-row {
+  display:  flex;
+  flex-wrap: wrap;
+
+  &--justify--start{
+    justify-content: start;
+  }
+  &--justify--flex-end{
+    justify-content: flex-end;
+  }
+  &--justify--flex-start{
+    justify-content: flex-start;
+  }
+  &--justify--end{
+    justify-content: end;
+  }
+  &--justify--center{
+    justify-content: center;
+  }
+  &--justify--space-around{
+    justify-content: space-around;
+  }
+  &--justify--space-between{
+    justify-content: space-between;
+  }
+}
