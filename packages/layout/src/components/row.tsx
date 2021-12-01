@@ -14,6 +14,10 @@ const layoutProps = {
   // 设置间距
   gutter: {
     type: String
+  },
+  tag: {
+    type: String as PropType<keyof HTMLElementTagNameMap>,
+    default: 'div'
   }
 }
 
