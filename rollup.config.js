@@ -57,11 +57,10 @@ const Config = {
         '.woff',
         '.woff2'
       ],
+      // 是否插入到head中
+      inject: true,
       // 最小化css 就是压缩css
-      minimize: false,
-      namedExports (name) {
-        return name
-      }
+      minimize: false
     }),
     babel({
       babelHelpers: 'bundled',

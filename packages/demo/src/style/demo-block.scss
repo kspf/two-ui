@@ -1,0 +1,15 @@
+@import '~@two-ui/base/style/var.scss';
+
+.two-demo-block {
+  margin-bottom: 24px;
+  padding: 24px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 12px #ebedf0;
+
+  &__title {
+    margin-bottom: 16px;
+    font-weight: 600;
+    font-size: 20px;
+  }
+}

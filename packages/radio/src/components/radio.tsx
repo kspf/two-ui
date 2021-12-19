@@ -1,4 +1,5 @@
 import { createNamespace } from '@two-ui/base'
+// import { TwoIcon } from '@two-ui/icon'
 import { getCurrentInstance } from 'vue'
 import './../style/index.scss'
 
@@ -28,6 +29,15 @@ export const TwoRadio = createComponent({
   setup (props, { slots, emit }) {
     const current = getCurrentInstance()
 
+    const renderIcon = () => {
+      if (slots.icon) {
+        return slots.icon(props.modelValue)
+      }
+      return <label class={bem('label')}></label>
+
+      // <label class={bem('label')}></label>
+    }
+
     const getRadioGroupComponent = () => {
       let parent = current
       do {
@@ -49,11 +59,13 @@ export const TwoRadio = createComponent({
       const { value } = props
       parent?.emit('update:modelValue', value)
     }
+
     return () => {
       const { name, disabled } = props
       return <div class={bem()} onClick={hanleClick}>
         <input class={bem('input')} type="radio" name={name} disabled={disabled} checked={isChecked()}></input>
-        <label class={bem('label')}></label>
+        {/* <label class={bem('label')}></label> */}
+        {renderIcon()}
         <span>
           {slots.default && slots.default()}
         </span>

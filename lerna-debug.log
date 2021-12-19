@@ -1,0 +1,12 @@
+0 silly argv {
+0 silly argv   _: [ 'add' ],
+0 silly argv   scope: '@two-ui/radio',
+0 silly argv   globs: [],
+0 silly argv   lernaVersion: '4.0.0',
+0 silly argv   '$0': 'lerna',
+0 silly argv   pkg: '@two/icon'
+0 silly argv }
+1 notice cli v4.0.0
+2 verbose rootPath /Users/malinfeng/Desktop/two-ui
+3 error HttpErrorGeneral: 404 Not Found - GET https://registry.npmjs.com/@two%2ficon - Not found
+3 error     at /Users/malinfeng/Desktop/two-ui/node_modules/pacote/node_modules/npm-registry-fetch/check-response.js:95:15

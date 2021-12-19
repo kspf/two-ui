@@ -16,7 +16,12 @@
     <two-radio value="3">单选框3</two-radio>
   </TwoRadioGroup>
 
-  <two-radio value="4" v-model="radio2">单选框4</two-radio>
+  <two-radio value="4" v-model="radio2">
+    <template #icon="props">
+      {{props}}
+      <img class="img-icon" src="https://himg.bdimg.com/sys/portraitn/item/27aad7d4b3b0b5c4d2e2cbbcdc69" />
+    </template>
+  </two-radio>
   <two-radio value="5" v-model="radio2">单选框5</two-radio>
   <two-radio value="6" v-model="radio2">单选框6</two-radio>
 

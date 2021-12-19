@@ -1,7 +1,7 @@
 {
-  "name": "@two-ui/radio",
+  "name": "@two-ui/toast",
   "version": "1.0.0",
-  "description": "radio component",
+  "description": "toast component",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "umd": "dist/umd/index.js",
@@ -14,13 +14,13 @@
   },
   "keywords": [
     "@two-ui",
-    "@two-ui/radio",
-    "radio"
+    "@two-ui/toast",
+    "toast"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/kspf/two-ui.git",
-    "directory": "packages/radio"
+    "directory": "packages/toast"
   },
   "dependencies": {
     "@two-ui/base": "^1.0.0",

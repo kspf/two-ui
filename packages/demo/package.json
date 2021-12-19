@@ -1,7 +1,7 @@
 {
-  "name": "@two-ui/radio",
+  "name": "@two-ui/demo",
   "version": "1.0.0",
-  "description": "radio component",
+  "description": "demo component",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "umd": "dist/umd/index.js",
@@ -14,17 +14,17 @@
   },
   "keywords": [
     "@two-ui",
-    "@two-ui/radio",
-    "radio"
+    "@two-ui/demo",
+    "demo"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/kspf/two-ui.git",
-    "directory": "packages/radio"
+    "directory": "packages/demo"
   },
   "dependencies": {
     "@two-ui/base": "^1.0.0",
-    "@two-ui/icon": "^1.0.0"
+    "highlight.js": "^11.3.1"
   },
   "scripts": {
     "types": "tsc -d --emitDeclarationOnly",
