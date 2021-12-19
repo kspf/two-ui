@@ -30,5 +30,5 @@
     "serve": "two-cli dev",
     "test": "jest"
   },
-  "gitHead": "3938c3fb1f0ae6323ff00c70cf859b47fd874d31"
+  "gitHead": "0c0730924bc42544d13ad5ab04d1ce4728a15a15"
 }
