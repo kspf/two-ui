@@ -6,8 +6,7 @@
   ],
   "command": {
     "publish": {
-      "registry": "https://registry.npmjs.org/",
-      "assess": "public"
+      "registry": "http://localhost:4873/"
     }
   }
 }
